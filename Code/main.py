@@ -7,8 +7,9 @@ from time import sleep
 TWITTER_USERNAME = "YOUR TWITTER USERNAME"
 TWITTER_PASSWORD = "YOUR TWITTER PASSWORD"
 
-chrome_driver_path_service = Service("C:\Development\chromedriver.exe")
-driver = webdriver.Chrome(service=chrome_driver_path_service)
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("https://speedtest.net/")
 driver.maximize_window()
